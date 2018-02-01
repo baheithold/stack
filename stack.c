@@ -56,6 +56,19 @@ void push(STACK *items, void *value) {
 
 
 /*
+ *  Method: pop
+ *  Usage:  void *value = pop(s);
+ *  Description: The pop method runs in constant or amortized constant time.
+ *  The value to be popped is removed in the underlying data structure. 
+ */
+void *pop(STACK *items) {
+    assert(sizeDLL(items->store) > 0);
+    items->size--;
+    return removeDLL(items->store, TOP);
+}
+
+
+/*
  *  Method: peekSTACK
  *  Usage:  void *top = peekSTACK(s);
  *  Description: The peek method returns the value ready to come off the stack,
@@ -63,6 +76,7 @@ void push(STACK *items, void *value) {
  */
 void *peekSTACK(STACK *items) {
     assert(items != 0);
+    assert(sizeDLL(items->store) > 0);
     return getDLL(items->store, TOP);
 }
 

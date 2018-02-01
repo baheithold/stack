@@ -1,20 +1,187 @@
-
-#include "integer.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include "stack.h"
+#include "integer.h"
 
-int main(void) {
+int main(void)
+{  
+  STACK *list = newSTACK(displayINTEGER, freeINTEGER);
+  
+  int x; //used in peeking
+  INTEGER *i; //used in poping
+  int size; //used in sizing
 
-    STACK *s = newSTACK(displayINTEGER, freeINTEGER);
+  // push into STACK ->
+   displaySTACK(list, stdout);
+  printf("\n");
+  displaySTACKdebug(list, stdout);
+  printf("\n");
+  push(list, newINTEGER(0));
+  displaySTACK(list, stdout);
+  printf("\n");
+  displaySTACKdebug(list, stdout);
+  printf("\n");
+  push(list, newINTEGER(1));
+  displaySTACK(list, stdout);
+  printf("\n");
+  displaySTACKdebug(list, stdout);
+  printf("\n");
+  push(list, newINTEGER(2));
+  displaySTACK(list, stdout);
+  printf("\n");
+  displaySTACKdebug(list, stdout);
+  printf("\n");
+  push(list, newINTEGER(3));
+  displaySTACK(list, stdout);
+  printf("\n");
+  displaySTACKdebug(list, stdout);
+  printf("\n");
+  push(list, newINTEGER(4));
+  displaySTACK(list, stdout);
+  printf("\n");
+  displaySTACKdebug(list, stdout);
+  printf("\n");
+  push(list, newINTEGER(5));
+  displaySTACK(list, stdout);
+  printf("\n");
+  displaySTACKdebug(list, stdout);
+  printf("\n");
 
-    push(s, newINTEGER(5));
-    push(s, newINTEGER(6));
-    push(s, newINTEGER(2));
-    push(s, newINTEGER(9));
-    push(s, newINTEGER(1));
+  size = sizeSTACK(list);
+  printf("the size of list is: %d\n", size);
 
-    displaySTACK(s, stdout);
-    printf("\n");
+  displaySTACK(list, stdout);
+  printf("\n");
+  displaySTACKdebug(list, stdout);
+  printf("\n");
 
-    freeSTACK(s);
-    return 0;
+  printf("\n");
+  printf("The value ");
+  i = pop(list);                   //remove from front
+  displayINTEGER(i,stdout);
+  printf(" was removed.\n");
+  freeINTEGER(i);
+  printf("\n");
+
+  size = sizeSTACK(list);
+  printf("the size of list1 is: %d\n", size);
+
+  displaySTACK(list, stdout);
+  printf("\n");
+  displaySTACKdebug(list, stdout);
+  printf("\n");
+
+  
+  printf("\n");
+  x = getINTEGER((INTEGER *) peekSTACK(list));
+  printf("peek STACK (first value): %d\n", x);
+  printf("\n");
+
+  printf("The value ");
+  i = pop(list);                   //remove from front
+  displayINTEGER(i,stdout);
+  printf(" was removed.\n");
+  freeINTEGER(i);
+  printf("\n");
+
+  size = sizeSTACK(list);
+  printf("the size of list1 is: %d\n", size);
+
+  displaySTACK(list, stdout);
+  printf("\n");
+  displaySTACKdebug(list, stdout);
+  printf("\n");
+
+  printf("\n");
+  x = getINTEGER((INTEGER *) peekSTACK(list));
+  printf("peek STACK (first value): %d\n", x);
+
+  printf("The value ");
+  i = pop(list);                   //remove from front
+  displayINTEGER(i,stdout);
+  printf(" was removed.\n");
+  freeINTEGER(i);
+  printf("\n");
+
+  size = sizeSTACK(list);
+  printf("the size of list1 is: %d\n", size);
+
+  displaySTACK(list, stdout);
+  printf("\n");
+  displaySTACKdebug(list, stdout);
+  printf("\n");
+
+  printf("\n");
+  x = getINTEGER((INTEGER *) peekSTACK(list));
+  printf("peek STACK (first value): %d\n", x);
+
+  printf("The value ");
+  i = pop(list);                   //remove from front
+  displayINTEGER(i,stdout);
+  printf(" was removed.\n");
+  freeINTEGER(i);
+  printf("\n");
+
+  size = sizeSTACK(list);
+  printf("the size of list1 is: %d\n", size);
+
+  displaySTACK(list, stdout);
+  printf("\n");
+  displaySTACKdebug(list, stdout);
+  printf("\n");
+
+  printf("\n");
+  x = getINTEGER((INTEGER *) peekSTACK(list));
+  printf("peek STACK (first value): %d\n", x);
+
+  printf("The value ");
+  i = pop(list);                   //remove from front
+  displayINTEGER(i,stdout);
+  printf(" was removed.\n");
+  freeINTEGER(i);
+  printf("\n");
+
+  size = sizeSTACK(list);
+  printf("the size of list1 is: %d\n", size);
+
+  displaySTACK(list, stdout);
+  printf("\n");
+  displaySTACKdebug(list, stdout);
+  printf("\n");
+
+  printf("\n");
+  x = getINTEGER((INTEGER *) peekSTACK(list));
+  printf("peek STACK (first value): %d\n", x);
+
+  printf("The value ");
+  i = pop(list);                   //remove from front
+  displayINTEGER(i,stdout);
+  printf(" was removed.\n");
+  freeINTEGER(i);
+  printf("\n");
+
+  size = sizeSTACK(list);
+  printf("the size of list1 is: %d\n", size);
+
+  displaySTACK(list, stdout);
+  printf("\n");
+  displaySTACKdebug(list, stdout);
+  printf("\n");
+
+  push(list, newINTEGER(5));
+  push(list, newINTEGER(4));
+  push(list, newINTEGER(3));
+  
+  printf("\n");
+  size = sizeSTACK(list);
+  printf("the size of list is: %d\n", size);
+
+  displaySTACK(list, stdout);
+  printf("\n");
+  displaySTACKdebug(list, stdout);
+  printf("\n");
+
+  printf("\n");
+  freeSTACK(list);
+  return 0;
 }
