@@ -11,6 +11,7 @@
 
 #define TOP 0
 
+
 /*
  *  Type:   STACK
  *  Description: The basis of the STACK class.
@@ -22,6 +23,7 @@ struct STACK {
     void (*display)(void *, FILE *);
     void (*free)(void *);
 };
+
 
 /*
  *  Constructor:    newSTACK
@@ -39,6 +41,7 @@ STACK *newSTACK(void (*d)(void *, FILE *), void (*f)(void *)) {
     return s;
 }
 
+
 /*
  *  Method: push
  *  Usage:  push(items, value);
@@ -50,6 +53,19 @@ void push(STACK *items, void *value) {
     insertDLL(items->store, TOP, value);
     items->size++;
 }
+
+
+/*
+ *  Method: sizeSTACK
+ *  Usage int size = sizeSTACK(s);
+ *  Description: The size method returns the number of items stored in
+ *  the stack. It runs in amortized constant time. 
+ */
+int sizeSTACK(STACK *items) {
+    assert(items != 0);
+    return items->size;
+}
+
 
 /*
  *  Method: displaySTACK
@@ -67,6 +83,7 @@ void displaySTACK(STACK *items, FILE *fp) {
     }
     fprintf(fp, "|");
 }
+
 
 /*
  *  Method: displaySTACKdebug
