@@ -67,3 +67,8 @@ void displaySTACK(STACK *items, FILE *fp) {
     }
     fprintf(fp, "|");
 }
+
+void displaySTACKdebug(STACK *items, FILE *fp) {
+    assert(items != 0);
+    displayDLLdebug(items->store, fp);
+}
