@@ -56,6 +56,18 @@ void push(STACK *items, void *value) {
 
 
 /*
+ *  Method: peekSTACK
+ *  Usage:  void *top = peekSTACK(s);
+ *  Description: The peek method returns the value ready to come off the stack,
+ *  but leaves the stack unchanged. It runs in constant time. 
+ */
+void *peekSTACK(STACK *items) {
+    assert(items != 0);
+    return getDLL(items->store, TOP);
+}
+
+
+/*
  *  Method: sizeSTACK
  *  Usage int size = sizeSTACK(s);
  *  Description: The size method returns the number of items stored in
