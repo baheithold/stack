@@ -68,7 +68,25 @@ void displaySTACK(STACK *items, FILE *fp) {
     fprintf(fp, "|");
 }
 
+/*
+ *  Method: displaySTACKdebug
+ *  Usage:  displaySTACKdebug(items, stdout);
+ *  Description: This method calls the debug method of the underlying
+ *  data structure.
+ */
 void displaySTACKdebug(STACK *items, FILE *fp) {
     assert(items != 0);
     displayDLLdebug(items->store, fp);
+}
+
+/*
+ *  Method: freeSTACK
+ *  Usage:  freeSTACK(s);
+ *  Description: This method frees the stack by freeing the underlying
+ *  data structure and then freeing the stack object itself.
+ */
+void freeSTACK(STACK *items) {
+    assert(items != 0);
+    freeDLL(items->store);
+    free(items);
 }

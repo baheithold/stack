@@ -15,5 +15,6 @@ int main(void) {
     displaySTACK(s, stdout);
     printf("\n");
 
+    freeSTACK(s);
     return 0;
 }
