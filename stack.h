@@ -9,7 +9,7 @@
 
 #include <stdio.h>
 
-typedef struct stack STACK;
+typedef struct STACK STACK;
 
 extern STACK *newSTACK(void (*d)(void *, FILE *), void (*f)(void *));
 extern void push(STACK *items, void *value);

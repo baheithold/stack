@@ -4,5 +4,7 @@
 
 int main(void) {
 
+    STACK *s = newSTACK(displayINTEGER, freeINTEGER);
+
     return 0;
 }
