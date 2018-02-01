@@ -50,3 +50,20 @@ void push(STACK *items, void *value) {
     insertDLL(items->store, TOP, value);
     items->size++;
 }
+
+/*
+ *  Method: displaySTACK
+ *  Usage:  displaySTACK(items, stdout);
+ *  Example Output: |1,9,2,6,5| where 1 is on the top of the stack
+ */
+void displaySTACK(STACK *items, FILE *fp) {
+    assert(items != 0);
+    fprintf(fp, "|");
+    for (int i = 0; i < sizeDLL(items->store); i++) {
+        items->display(getDLL(items->store, i), fp);
+        if (i < sizeDLL(items->store) - 1) {
+            fprintf(fp, ",");
+        }
+    }
+    fprintf(fp, "|");
+}
