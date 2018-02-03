@@ -36,6 +36,16 @@
 *.x86_64
 *.hex
 test-stack
+stack-0-0
+stack-0-1
+stack-0-2
+stack-0-3
+stack-0-4
+stack-0-5
+stack-0-6
+stack-0-7
+stack-0-8
+stack-0-9
 
 # Debug files
 *.dSYM/
