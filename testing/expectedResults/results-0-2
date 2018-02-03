@@ -1,0 +1,9 @@
+|b,c,a|
+b
+|c,a|
+head->{{c,a}},tail->{{a}}
+c
+|a|
+head->{{a}},tail->{{a}}
+||
+head->{{}},tail->{{}}
