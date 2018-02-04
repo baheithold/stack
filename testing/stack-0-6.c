@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "stack.h"
+#include "../stack.h"
 
 extern void srandom(unsigned int);
 extern long int random(void);
